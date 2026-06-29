@@ -1,0 +1,47 @@
+{
+  "name": "@meredian-labs/latchpm",
+  "version": "0.1.0",
+  "description": "A safer npm install wrapper that audits npm packages before installation.",
+  "type": "module",
+  "bin": {
+    "latchpm": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "npm run build -w latch-core && tsc -p tsconfig.json --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "dev": "tsx src/index.ts"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "docs",
+    "package.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/meredian-labs/latchpm.git"
+  },
+  "keywords": [
+    "npm",
+    "install",
+    "security",
+    "supply-chain",
+    "package-audit",
+    "cli",
+    "policy"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "latch-core": "^0.1.1",
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/prompts": "^2.4.9"
+  }
+}
